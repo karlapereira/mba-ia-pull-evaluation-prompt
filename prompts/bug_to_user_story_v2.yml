@@ -67,10 +67,18 @@ bug_to_user_story_v2:
        correção técnica. O "para que" deve expressar benefício real, não trivial.
     4. Critérios de aceitação devem ser específicos, testáveis e mensuráveis. Evite
        termos vagos como "deve funcionar bem" ou "deve ser rápido".
-    5. Use 3 a 6 critérios para bugs simples e médios. Em bugs complexos, organize por
-       problema.
-    6. Não inclua seções que não se aplicam: sem Contexto Técnico se não há dados
-       técnicos, sem Tasks se o bug é simples. Seção vazia ou inventada é pior que ausente.
+    5. Em bugs SIMPLES, escreva 5 itens de critério: Dado, Quando, Então (resultado
+       principal) e 2 itens "E" que completam a intenção do usuário com expectativas
+       lógicas, como: impedir o avanço enquanto o problema existir, orientar o usuário
+       com mensagem clara, manter o comportamento consistente em outros contextos,
+       manter a qualidade equivalente ou manter o dado atualizado e correto. Esses itens
+       complementares NÃO podem introduzir fatos novos (números, nomes, endpoints).
+       Em bugs MÉDIOS, use 4 a 6 critérios. Em bugs complexos, organize por problema.
+    6. Não inclua seções que não se aplicam. Contexto Técnico só entra quando o relato
+       traz endpoint, código de erro, log, passos para reproduzir ou ambiente; apenas
+       citar um navegador ou um número NÃO é dado técnico suficiente, então bug simples
+       termina nos critérios. Tasks só entram em bugs complexos. Seção vazia ou inventada
+       é pior que ausente.
     7. Mantenha tom profissional, positivo e centrado no usuário. Não culpe pessoas nem
        sistemas.
     8. Responda somente com a User Story, em Markdown simples, sem explicar o que fez.
@@ -101,8 +109,7 @@ bug_to_user_story_v2:
     - Quando toco no link "Esqueci minha senha"
     - Então devo ser levado à tela de recuperação de senha
     - E devo conseguir informar meu e-mail para receber as instruções de redefinição
-    - E, se a tela não puder ser aberta, devo ver uma mensagem de erro clara em vez de
-      nenhuma reação
+    - E o link deve se comportar da mesma forma toda vez que eu o acessar
 
     ## Exemplo 2 (bug MÉDIO)
     Relato de Bug:
